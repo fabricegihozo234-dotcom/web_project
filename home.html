@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" a href="agri_assistant/favicon.ico" type="image/x-icon">
+</head>
+<style>
+body{
+    background-image: url(uu.jfif);
+}
+    h1{
+color: orange;
+text-align: center;
+font-style: oblique;
+font-weight: bold;
+font-display: block;
+margin-top: 20px;
+    }
+    .session1{
+        background-color: rosybrown;
+        width: 250px;
+        height: 250px;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+        margin-left: 140px;
+        border-top: mediumseagreen;
+        margin-top: 30px;
+        border-color: blue;
+        
+    }
+    .session1 h4{
+
+        background-color: darkgray;
+        color: rgb(233, 191, 113);
+        text-align: center;
+        border-radius: 100px;
+    }
+    
+
+    #w{
+        color: orange;
+        text-transform: capitalize;
+        font-size: medium;
+        text-align: center;
+        margin-top: 10px;
+        padding: 20px 10px;
+    }
+    #e{
+        color: orange;
+        font-size: medium;
+        text-align: center;
+        margin-top: -40px;
+    }
+    #r{
+        color: orange;
+        font-size: medium;
+        text-align: center;
+        margin-top: -10px;
+
+
+    }
+    #t{
+        color: orange;
+        font-size: medium;
+        text-align: center;
+        padding: 10px 10px;
+        margin-top: -15px;
+    }
+    .button{
+
+        background-color: darkgreen;
+        border-radius: 10px;
+        
+        margin-top: -40px;
+    }
+    .button a{
+        margin-top: -20px;
+        text-decoration: none;
+        color: gold;
+    }
+</style>
+<body>
+    <h1>login form</h1>
+
+    <div class="session1">
+<h4>login form</h4>
+<h2 id="w">names:<input type="text" name="first" placeholder=
+"enter your first name"></h2><br>
+
+<h2 id="e">home_a:<input type="text" name="address" placeholder=
+"enter your home address"></h2><br>
+
+
+<h2 id="r">phone_no:<input type="number" name="no" placeholder=
+"enter your phone no"></h2><br>
+
+
+<h2 id="r">Password: <input type="password" id="userPass" placeholder="enter password"></h2>
+
+<p id="error-msg" style="color: red; text-align: center;"></p>
+
+<button id="loginBtn" class="button"><a href="index.html">log in</a></button>
+
+
+
+
+    </div>
+
+    <script>
+    const loginButton = document.getElementById('loginBtn');
+    const errorDisplay = document.getElementById('error-msg');
+
+    loginButton.addEventListener('click', function(event) {
+        // 1. Get the value the user typed
+        const typedPassword = document.getElementById('userPass').value;
+        const correctPassword = "12345"; // You decide this
+
+        // 2. Check if it matches
+        if (typedPassword === "") {
+            event.preventDefault(); // Stop the page from changing
+            errorDisplay.innerText = "Please enter a password.";
+        } 
+        else if (typedPassword !== correctPassword) {
+            event.preventDefault(); // Stop the page from changing
+            errorDisplay.innerText = "Incorrect password! Try again.";
+            
+            // Optional: shake the input or clear it
+            document.getElementById('userPass').value = ""; 
+        } 
+        else {
+            // If it's correct, we do nothing and let the <a href> work!
+            alert("Login Successful!");
+        }
+    });
+</script>
+
+
+</body>
+</html>
